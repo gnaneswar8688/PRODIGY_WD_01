@@ -1,17 +1,27 @@
-// ===== LOADER =====
-window.addEventListener("load", function () {
-    setTimeout(() => {
+// LOADER FIXED (No more stuck loading)
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
         document.getElementById("loader").style.display = "none";
-    }, 2000);
+    }, 1200);
 });
 
-// ===== NAVBAR SCROLL EFFECT =====
+// NAVBAR SCROLL EFFECT
 window.addEventListener("scroll", function () {
-    let navbar = document.getElementById("navbar");
+    const navbar = document.getElementById("navbar");
 
     if (window.scrollY > 50) {
         navbar.classList.add("scrolled");
     } else {
         navbar.classList.remove("scrolled");
     }
+});
+
+// ACTIVE MENU COLOR
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach(link => {
+    link.addEventListener("click", function () {
+        navLinks.forEach(item => item.classList.remove("active"));
+        this.classList.add("active");
+    });
 });
