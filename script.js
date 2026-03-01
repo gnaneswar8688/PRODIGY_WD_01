@@ -1,11 +1,14 @@
-// LOADER FIXED (No more stuck loading)
-document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(function () {
-        document.getElementById("loader").style.display = "none";
-    }, 1200);
+// ===== FIXED SMOOTH LOADER =====
+window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+    loader.style.opacity = "0";
+
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 500);
 });
 
-// NAVBAR SCROLL EFFECT
+// ===== NAVBAR SCROLL EFFECT =====
 window.addEventListener("scroll", function () {
     const navbar = document.getElementById("navbar");
 
@@ -16,7 +19,7 @@ window.addEventListener("scroll", function () {
     }
 });
 
-// ACTIVE MENU COLOR
+// ===== ACTIVE MENU CLICK =====
 const navLinks = document.querySelectorAll(".nav-link");
 
 navLinks.forEach(link => {
